@@ -13,20 +13,21 @@ env:
   AWS_REGION : "eu-west-3"
 
 jobs:
-
   deploy:
     name: demo
     runs-on: ubuntu-latest
-    permissions:
-      contents: read  # This is required for actions/checkout
-      id-token: write
+
     steps:
     - uses: actions/checkout@v4
+
+    # Assume role with Web Identity
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v3
       with:
         role-to-assume: arn:aws:iam::450568479740:role/github-oidc
         role-session-name: samplerolesession
         aws-region: ${{ env.AWS_REGION }}
+
+    # For demo purpose, open a shell in the Github Runner
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
