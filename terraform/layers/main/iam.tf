@@ -39,10 +39,8 @@ resource "aws_iam_role" "github" {
                 },
                 "Action": "sts:AssumeRoleWithWebIdentity",
                 "Condition": {
-                    "StringLike": {
-                        "token.actions.githubusercontent.com:sub": "repo:padok-team/demo-github-actions-oidc:*"
-                    },
                     "StringEquals": {
+                        "token.actions.githubusercontent.com:sub": "repo:padok-team/demo-github-actions-oidc:ref:refs/heads/main",
                         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
                     }
                 }
