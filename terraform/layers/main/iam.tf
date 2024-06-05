@@ -54,8 +54,8 @@ resource "aws_iam_policy" "github-access" {
 }
 
 # Attach the policy to the role
-resource "aws_iam_policy_attachment" "admin-policy" {
+resource "aws_iam_policy_attachment" "github-policy" {
   name       = "admin-attachment"
   roles      = [aws_iam_role.github.name]
-  policy_arn = aws_iam_policy.admin-access.arn
+  policy_arn = aws_iam_policy.github-access.arn
 }
