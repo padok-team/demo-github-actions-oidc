@@ -30,4 +30,4 @@ jobs:
 
     # For demo purpose, open a shell in the Github Runner
     - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+      uses: mxschmitt/action-tmate@v3.17
