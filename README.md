@@ -1,3 +1,1 @@
-Demo OIDC Github Action
-triggertrigger
-trigger
+Demo OIDC Github Actiontrigger
